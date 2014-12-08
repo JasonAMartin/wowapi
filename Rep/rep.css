@@ -1,0 +1,76 @@
+#reputation {
+  color: #000;
+  font-family: Consolas,monaco,monospace;
+  font-size: 12px;
+}
+
+.rep-listing {
+//  margin-left: 10px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.honored {
+  font-weight: bold;
+  color: #072B73;
+}
+
+.revered {
+  font-weight: bold;
+  color: #43592D;
+}
+
+.exalted {
+  font-weight: bold;
+  color: #731943;
+
+}
+
+#hated,
+#hostile,
+#unfriendly,
+#neutral,
+#friendly,
+#honored,
+#revered,
+#exalted
+{
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+  text-transform: uppercase;
+  float: left;
+  margin-right: 20px;
+}
+
+#hated:before{
+  content: "hated";
+}
+
+#hostile:before{
+  content: "hostile";
+}
+
+#unfriendly:before{
+  content: "unfriendly";
+}
+
+#neutral:before{
+  content: "neutral";
+}
+
+#friendly:before{
+  content: "friendly";
+}
+
+#honored:before{
+  content: "honored";
+}
+
+#revered:before{
+  content: "revered";
+}
+
+#exalted:before{
+  content: "exalted";
+}
