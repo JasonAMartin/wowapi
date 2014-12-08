@@ -10,20 +10,23 @@
   font-size: 14px;
 }
 
-.honored {
+#exalted > .rep-listing,
+#honored > .rep-listing,
+#revered > .rep-listing
+{
   font-weight: bold;
+}
+
+#honored > .rep-listing {
   color: #072B73;
 }
 
-.revered {
-  font-weight: bold;
+#revered > .rep-listing {
   color: #43592D;
 }
 
-.exalted {
-  font-weight: bold;
+#exalted > .rep-listing {
   color: #731943;
-
 }
 
 #hated,

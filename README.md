@@ -11,4 +11,4 @@ This will return JSON for the character Gor on Uther. It will return some basic 
 
 Since my main purpose here was to get and manipulate data, I put very little effort into presentation.
 
-Currently, this repo uses HTML, CSS, Javascript, and jQuery.
+This repo uses HTML, CSS, Javascript, jQuery, LESS and Node JS.

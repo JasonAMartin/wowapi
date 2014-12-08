@@ -25,7 +25,7 @@ var reputation = {
 var reputationIndex = ["hated","hostile","unfriendly","neutral","friendly","honored","revered","exalted"];
 
 $.ajax({
-    url: 'http://us.battle.net/api/wow/character/uther/Gor?fields=pets,achievements,reputation',
+    url: 'http://us.battle.net/api/wow/character/uther/Gor?fields=reputation',
     dataType: 'JSONP',
     jsonpCallback: 'callback',
     type: 'GET',
@@ -40,32 +40,8 @@ $.ajax({
             //create div for this listing and give it a class name for styling
             var listingElement = document.createElement("div");
             listingElement.className = "rep-listing";
-
             //let's have fun and add a classes for special rep standings & set the target div while we're at it
-
-
-
-            if (content.standing == 0) {
-               targetElement = reputation.hated;
-            } else if (content.standing == 1) {
-              targetElement = reputation.hostile;
-            }else if (content.standing == 2) {
-              targetElement = reputation.unfriendly;
-            }else if (content.standing == 3) {
-              targetElement = reputation.neutral;
-            }else if (content.standing == 4) {
-              targetElement = reputation.friendly;
-            }else if (content.standing == 5) {
-              listingElement.className += " honored";
-              targetElement = reputation.honored;
-            }else if (content.standing == 6) {
-                listingElement.className += " revered";
-                targetElement = reputation.revered;
-            } else if (content.standing == 7) {
-                listingElement.className += " exalted";
-                targetElement = reputation.exalted;
-            }
-
+            targetElement = reputation[reputationIndex[content.standing]];
             //create a text node with desired content, name in this case
             var listingElementContent = document.createTextNode(content.name);
             //append the desired content to the appropriate div
