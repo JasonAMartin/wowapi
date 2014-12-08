@@ -8,8 +8,6 @@ Reputation levels in WOW:
 5: honored
 6: revered
 7: exalted
-
-TODO: I'll create sections for each faction level and list by that instead of in the order the data is received.
 **/
 
 //create a reputation object. Key is rep name and value is the target div
@@ -23,6 +21,8 @@ var reputation = {
     "revered" : $("#revered"),
     "exalted" : $("#exalted")
 }
+
+var reputationIndex = ["hated","hostile","unfriendly","neutral","friendly","honored","revered","exalted"];
 
 $.ajax({
     url: 'http://us.battle.net/api/wow/character/uther/Gor?fields=pets,achievements,reputation',
@@ -42,6 +42,9 @@ $.ajax({
             listingElement.className = "rep-listing";
 
             //let's have fun and add a classes for special rep standings & set the target div while we're at it
+
+
+
             if (content.standing == 0) {
                targetElement = reputation.hated;
             } else if (content.standing == 1) {
