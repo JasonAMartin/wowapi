@@ -1,0 +1,31 @@
+{
+  "name": "WoWAPI",
+  "version": "0.0.1",
+  "description": "A library providing utility methods for getting data from the World of Warcraft API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonAMartin/wowapi.git"
+  },
+  "keywords": [
+    "javascript",
+    "world",
+    "of",
+    "warcraft",
+    "node"
+  ],
+  "author": "Jason A. Martin <jmartin@jasonamartin.com> (http://www.jasonamartin.com/)",
+  "bugs": {
+    "url": "https://github.com/JasonAMartin/wowapi/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+    }
+  ],
+  "homepage": "https://github.com/JasonAMartin/wowapi"
+}
