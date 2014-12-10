@@ -27,5 +27,8 @@
       "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
     }
   ],
+  "dependencies": {
+    "nconf": "*"
+  },
   "homepage": "https://github.com/JasonAMartin/wowapi"
 }

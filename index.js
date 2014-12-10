@@ -11,49 +11,39 @@
  */
 
 var fs = require('fs');
+var nconf = require('nconf');
+
 
 module.exports = {
 
 	init: function(server,player){
-		var opts = {
-			'server': server,
-			'player': player
-		};
-
-		var moduleOptions = JSON.stringify(opts);
-
-
-		fs.writeFile('./config.json', moduleOptions, function (err) {
+		//using nconf to set data
+		nconf.use('file', { file: './config.json' });
+		nconf.load();
+		if(server) { nconf.set('wow:server', server)};
+		if(player) { nconf.set('wow:player', player) };
+		//saving data
+		nconf.save(function (err) {
 			if (err) {
-				console.log('The config file was not saved.');
-				console.log(err.message);
+				console.error(err.message);
 				return;
 			}
-			console.log('Config file updated.');
+			console.log('Configuration saved successfully.');
 		});
-
-
 	},
 
 	loadConfig: function(){
-		var configData = fs.readFileSync('./config.json'),
-			myData;
-		try {
-			myData = JSON.parse(configData);
-			console.dir(myData);
-		}
-		catch (err) {
-			console.log('The JSON was not parsed properly.')
-			console.log(err);
-		}
+		nconf.use('file', { file: './config.json' });
+		nconf.load();
+		return nconf.get('wow');
 	},
 	wowRep: function(player,server) {
 		//coming back soon
 	},
 
 	demo: function(){
-		init("Gor","Uther");
-		var data = loadConfig();
+		//	this.init("Gor","Uther");
+		var data = this.loadConfig();
 		console.log(data);
 	}
 };
